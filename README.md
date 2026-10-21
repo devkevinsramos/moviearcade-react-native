@@ -2,57 +2,61 @@
 
 **Aluno:** Kevin Silva Ramos  
 **Disciplina:** Programação para Dispositivos Móveis I  
-**Aplicação:** MovieArcade  
+**Aplicativo:** MovieArcade  
 **Versão:** 1.0.0
 
-## O que é
+## Sobre o projeto
 
-O MovieArcade nasceu como um [projeto web de cinema](https://github.com/devkevinsramos/moviearcade), com catálogo de filmes e experiências interativas. Este aplicativo apresenta o projeto em quatro telas: Login, Home, Sobre e Contato. Não é uma versão completa do site.
+O MovieArcade começou como um [projeto para web](https://github.com/devkevinsramos/moviearcade) sobre cinema, com filmes, listas e jogos. Nesta atividade, adaptei sua identidade visual para um aplicativo mobile simples, com Login, Home, Sobre e Contato.
 
-A interface usa fundo escuro, textos claros e o logotipo do MovieArcade. O layout é simples, sem animações ou cards decorativos.
+O objetivo desta versão é demonstrar a navegação entre telas, o uso da Toolbar, a validação de um login de exemplo e a estilização com `StyleSheet`. Não é uma versão completa do site.
 
-## Tecnologias
+## Tecnologias utilizadas
 
-- JavaScript e React Native
+- JavaScript
+- React Native
 - Expo (SDK 57)
 - React Navigation (Native Stack)
-- React Hooks (`useState`)
 - `StyleSheet` para os estilos
 
 ## Como executar
 
-É necessário ter Node.js compatível com o Expo SDK 57 (Node 22.13 ou superior é uma opção), npm e um dispositivo ou emulador compatível.
+É necessário ter o Node.js e o npm instalados. O aplicativo pode ser aberto em um celular ou emulador compatível com o Expo.
 
-1. Abra esta pasta no VS Code (a pasta que contém o arquivo `package.json`).
-2. No terminal, execute:
+1. Baixe ou clone este repositório.
+2. Abra a pasta do projeto no VS Code.
+3. No terminal, instale as dependências:
 
-   ```powershell
+   ```bash
    npm install
+   ```
+
+4. Inicie o aplicativo:
+
+   ```bash
    npx expo start
    ```
 
-3. Abra no dispositivo usando uma opção compatível com o SDK 57 (Expo Go ou uma build de desenvolvimento). Consulte as opções indicadas pelo terminal do Expo.
-
-No PowerShell, caso o comando `npm` esteja bloqueado pela política de execução, use `npm.cmd` e `npx.cmd`.
-
-> **Observação:** a instalação e a execução devem ser verificadas no seu ambiente. Este pacote contém o código-fonte, sem a pasta `node_modules`.
+5. Siga as instruções exibidas no terminal para abrir o aplicativo no celular ou emulador.
 
 ## Credenciais de teste
 
 - **Usuário:** `martymauser`
 - **Senha:** `tenisdemesa`
 
-As credenciais estão definidas em `src/config/access.js`. O login é uma simulação. Não usa API, banco de dados, `localStorage` nem salva sessão. Ao sair ou reiniciar o aplicativo, o usuário volta à tela de Login.
+O login é apenas uma simulação. As credenciais ficam definidas no arquivo `src/config/access.js`. Não há cadastro, banco de dados, API ou armazenamento de sessão. Ao fechar completamente o aplicativo e abri-lo novamente, a tela inicial será o Login.
 
 ## Funcionalidades
 
-- **Login:** campos de usuário e senha, senha oculta, opção de mostrar/ocultar, validação, botão Entrar e botão Limpar campos.
-- **Home:** mensagem de boas-vindas, opções Sobre e Contato e link para o GitHub do projeto web.
-- **Sobre:** origem do projeto, missão, visão, valores, versão e informações acadêmicas.
+- **Login:** campos de usuário e senha, validação de campos vazios, mensagem para credenciais incorretas, opção de mostrar a senha, botão Entrar e botão Limpar campos.
+- **Home:** mensagem de boas-vindas, navegação para Sobre e Contato e acesso ao repositório do projeto web.
+- **Sobre:** descrição do MovieArcade, missão, visão, valores e informações do projeto.
 - **Contato:** telefone, e-mail, endereço e horário de atendimento fictícios.
-- **Toolbar:** título de cada tela, retorno às telas anteriores, opção Início nas telas internas e Sair na Home.
+- **Toolbar:** título da tela, botão Início para retornar à Home e botão Sair para voltar ao Login.
 
-## Organização do projeto
+O aplicativo usa fundo escuro, detalhes em laranja e estilos definidos com `StyleSheet`, mantendo a mesma identidade visual nas telas.
+
+## Organização das pastas
 
 ```text
 MovieArcade_React_Native/
@@ -61,45 +65,51 @@ MovieArcade_React_Native/
 ├── app.json
 ├── package.json
 ├── README.md
-├── assets/             # Ícone e logotipo
-├── prints/             # Capturas das telas para a entrega
+├── assets/             # Logotipo e ícones
+├── prints/             # Capturas das quatro telas
 └── src/
-    ├── components/     # Botão, navegação e textos reutilizados
-    ├── config/         # Credenciais do login de demonstração
-    ├── navigation/     # Rotas e Toolbar
-    ├── screens/        # Telas Login, Home, Sobre e Contato, com seus estilos
-    └── theme/          # Cores e estilos em comum
+    ├── components/     # Componentes reutilizados
+    ├── config/         # Credenciais de demonstração
+    ├── navigation/     # Navegação e Toolbar
+    ├── screens/        # Login, Home, Sobre e Contato
+    └── theme/          # Cores e estilos compartilhados
 ```
 
-## Testes antes da entrega
+## Capturas de tela
 
-Execute os testes abaixo no aplicativo. O resultado esperado está indicado em cada item.
+### Login
 
-| Teste | Ação | Resultado esperado |
-| --- | --- | --- |
-| 1 | Informar apenas a senha | Mensagem "Informe o usuário." |
-| 2 | Informar apenas o usuário | Mensagem "Informe a senha." |
-| 3 | Informar credenciais incorretas | Mensagem de erro, sem sair do Login |
-| 4 | Informar as credenciais corretas | Abre a Home |
-| 5 | Home → Sobre | Abre Sobre com sua Toolbar |
-| 6 | Sobre → Home | Retorna para Home (Voltar ou Início) |
-| 7 | Home → Contato | Abre Contato com sua Toolbar |
-| 8 | Contato → Home | Retorna para Home (Voltar ou Início) |
-| 9 | Fechar completamente e reabrir o aplicativo | Começa novamente em Login |
+![Tela de Login do MovieArcade](prints/login.png)
 
-Teste também os botões **Limpar campos**, **Mostrar/Ocultar senha**, **Sair** e o link do GitHub. Confira a aparência em um celular real ou emulador.
+### Home
 
-## Capturas para a entrega
+![Tela Home do MovieArcade](prints/home.png)
 
-Após testar a versão final, salve capturas reais das seguintes telas na pasta `prints/`:
+### Sobre
 
-- `login.jpg` (preferencialmente com os campos de teste preenchidos);
-- `home.jpg`;
-- `sobre.jpg`;
-- `contato.jpg`.
+![Tela Sobre do MovieArcade](prints/sobre.png)
 
-**As capturas não acompanham este ZIP.** As imagens antigas foram retiradas porque mostram uma interface anterior. Adicione os quatro prints atualizados ao repositório antes de entregar o trabalho.
+### Contato
 
-## Observação acadêmica
+![Tela Contato do MovieArcade](prints/contato.png)
 
-Este aplicativo é uma adaptação mobile do meu projeto web MovieArcade para o exercício de navegação e Toolbar. Antes de entregar, revise o código, execute os testes e siga as orientações da instituição sobre autoria e uso de ferramentas de IA.
+## Testes da atividade
+
+Os cenários abaixo devem ser conferidos ao executar o aplicativo:
+
+| Teste | Resultado esperado |
+| --- | --- |
+| Login sem usuário | Exibe a mensagem para preencher o usuário |
+| Login sem senha | Exibe a mensagem para preencher a senha |
+| Login com dados incorretos | Exibe uma mensagem de erro e permanece no Login |
+| Login com dados corretos | Abre a Home |
+| Home → Sobre | Abre a tela Sobre com sua Toolbar |
+| Sobre → Home | Retorna à Home |
+| Home → Contato | Abre a tela Contato com sua Toolbar |
+| Contato → Home | Retorna à Home |
+| Fechar e abrir novamente | Começa na tela de Login |
+
+## Projeto original
+
+Site: https://devkevinsramos.github.io/moviearcade/index.html  
+Repositório: https://github.com/devkevinsramos/moviearcade
