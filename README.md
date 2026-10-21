@@ -15,7 +15,7 @@ O objetivo desta versão é demonstrar a navegação entre telas, o uso da Toolb
 
 - JavaScript
 - React Native
-- Expo (SDK 57)
+- Expo (SDK 54)
 - React Navigation (Native Stack)
 - `StyleSheet` para os estilos
 
@@ -77,21 +77,23 @@ MovieArcade_React_Native/
 
 ## Capturas de tela
 
-### Login
 
-![Tela de Login do MovieArcade](prints/login.png)
+## Capturas de tela
+
+### Login
+![Tela de Login do MovieArcade](prints/login.jpg)
 
 ### Home
-
-![Tela Home do MovieArcade](prints/home.png)
+![Tela Home do MovieArcade](prints/home.jpg)
 
 ### Sobre
+![Tela Sobre do MovieArcade](prints/sobre.jpg)
 
-![Tela Sobre do MovieArcade](prints/sobre.png)
+![Tela Sobre do MovieArcade](prints/sobre2.jpg)
 
 ### Contato
+![Tela Contato do MovieArcade](prints/contato.jpg)
 
-![Tela Contato do MovieArcade](prints/contato.png)
 
 ## Testes da atividade
 
