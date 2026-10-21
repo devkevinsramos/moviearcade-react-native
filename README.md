@@ -2,137 +2,104 @@
 
 **Aluno:** Kevin Silva Ramos  
 **Disciplina:** Programação para Dispositivos Móveis I  
-**Aplicativo:** MovieArcade  
+**Aplicação:** MovieArcade  
 **Versão:** 1.0.0
 
-## Descrição
+## O que é
 
-Aplicativo institucional de demonstração do MovieArcade, projeto web autoral sobre cinema. Esta versão mobile apresenta a proposta do site e informações institucionais, sem reproduzir o catálogo ou os minigames da versão web.
+O MovieArcade nasceu como um [projeto web de cinema](https://github.com/devkevinsramos/moviearcade), com catálogo de filmes e experiências interativas. Este aplicativo apresenta o projeto em quatro telas: Login, Home, Sobre e Contato. Não é uma versão completa do site.
+
+A interface usa fundo escuro, textos claros e o logotipo do MovieArcade. O layout é simples, sem animações ou cards decorativos.
 
 ## Tecnologias
 
-- JavaScript e React Native.
-- Expo SDK 57 (mesma configuração do aplicativo Casa do Bairro já testado).
-- React Navigation 7 com Native Stack.
-- `StyleSheet`, `useState`, `TextInput`, `Pressable`, `ScrollView`, `Image` e `Linking`.
+- JavaScript e React Native
+- Expo (SDK 57)
+- React Navigation (Native Stack)
+- React Hooks (`useState`)
+- `StyleSheet` para os estilos
 
-Não há backend, banco de dados, integração de login ou armazenamento persistente.
+## Como executar
 
-## Instalação e execução no Windows
+É necessário ter Node.js compatível com o Expo SDK 57 (Node 22.13 ou superior é uma opção), npm e um dispositivo ou emulador compatível.
 
-Requisitos: Windows, VS Code ou terminal, Node.js e npm, Expo Go compatível com o Expo SDK do projeto e celular na mesma rede do computador, quando utilizar LAN.
+1. Abra esta pasta no VS Code (a pasta que contém o arquivo `package.json`).
+2. No terminal, execute:
 
-1. Extraia o ZIP.
-2. Abra a pasta `moviearcade-react-native` no VS Code.
-3. No terminal, entre na pasta que contém o `package.json`.
-4. Execute:
+   ```powershell
+   npm install
+   npx expo start
+   ```
 
-```powershell
-npm install
-npx expo start
-```
+3. Abra no dispositivo usando uma opção compatível com o SDK 57 (Expo Go ou uma build de desenvolvimento). Consulte as opções indicadas pelo terminal do Expo.
 
-5. Abra o Expo Go no iPhone e leia o QR Code apresentado no terminal.
+No PowerShell, caso o comando `npm` esteja bloqueado pela política de execução, use `npm.cmd` e `npx.cmd`.
 
-Se a conexão local não funcionar, experimente `npx expo start --tunnel`. A conexão usada pelo Expo é apenas para carregar o aplicativo durante o desenvolvimento; não faz parte de um sistema de autenticação.
-
-Para verificar a compatibilidade das dependências instaladas com o Expo:
-
-```powershell
-npx expo install --check
-```
+> **Observação:** a instalação e a execução devem ser verificadas no seu ambiente. Este pacote contém o código-fonte, sem a pasta `node_modules`.
 
 ## Credenciais de teste
 
 - **Usuário:** `martymauser`
 - **Senha:** `tenisdemesa`
 
-As credenciais ficam fixas em `src/data/credenciais.js`, para fins acadêmicos. O estado de autenticação existe apenas em memória: ao sair ou reiniciar o aplicativo, o fluxo retorna ao Login.
+As credenciais estão definidas em `src/config/access.js`. O login é uma simulação. Não usa API, banco de dados, `localStorage` nem salva sessão. Ao sair ou reiniciar o aplicativo, o usuário volta à tela de Login.
 
 ## Funcionalidades
 
-- Tela inicial de Login, com validação de campos obrigatórios e de credenciais.
-- Mensagens de erro, botão para limpar campos e opção de mostrar/ocultar senha.
-- Home com boas-vindas e navegação para Sobre e Contato.
-- Link para o repositório web original, aberto no navegador via `Linking`.
-- Sobre com resumo do site, missão, visão, valores e versão do aplicativo.
-- Contato com dados institucionais fictícios.
-- Toolbar com título, botão de voltar do React Navigation e opção de Sair na Home.
-- Botões entre Sobre e Contato, preservando o histórico da Stack com `navigation.push()`; a seta da Toolbar retorna à tela anterior.
-- Estilos em arquivos separados e componentes reutilizáveis.
+- **Login:** campos de usuário e senha, senha oculta, opção de mostrar/ocultar, validação, botão Entrar e botão Limpar campos.
+- **Home:** mensagem de boas-vindas, opções Sobre e Contato e link para o GitHub do projeto web.
+- **Sobre:** origem do projeto, missão, visão, valores, versão e informações acadêmicas.
+- **Contato:** telefone, e-mail, endereço e horário de atendimento fictícios.
+- **Toolbar:** título de cada tela, retorno às telas anteriores, opção Início nas telas internas e Sair na Home.
 
-## Estrutura de diretórios
+## Organização do projeto
 
 ```text
-moviearcade-react-native/
+MovieArcade_React_Native/
 ├── App.js
 ├── index.js
 ├── app.json
 ├── package.json
-├── .gitignore
-├── assets/
-│   ├── logo.png
-│   ├── icon.png
-│   ├── adaptive-icon.png
-│   ├── logo-original.svg
-│   └── estrelas-originais.svg
-├── src/
-│   ├── components/
-│   │   ├── Botao.js
-│   │   └── LinkPagina.js
-│   ├── data/
-│   │   └── credenciais.js
-│   ├── navigation/
-│   │   └── Rotas.js
-│   ├── pages/
-│   │   ├── Login/
-│   │   ├── Home/
-│   │   ├── Sobre/
-│   │   └── Contato/
-│   └── styles/
-│       ├── cores.js
-│       └── global.js
-└── capturas/
-    └── INSTRUCOES.md
+├── README.md
+├── assets/             # Ícone e logotipo
+├── prints/             # Capturas das telas para a entrega
+└── src/
+    ├── components/     # Botão, navegação e textos reutilizados
+    ├── config/         # Credenciais do login de demonstração
+    ├── navigation/     # Rotas e Toolbar
+    ├── screens/        # Telas Login, Home, Sobre e Contato, com seus estilos
+    └── theme/          # Cores e estilos em comum
 ```
-
-As imagens PNG de marca foram produzidas a partir do vetor `logo_m.svg` do projeto MovieArcade original. Os dois SVGs de referência foram preservados na pasta `assets/`.
 
 ## Testes antes da entrega
 
-| Teste | Resultado esperado |
-| --- | --- |
-| Usuário vazio | "Informe o usuário." |
-| Senha vazia | "Informe a senha." |
-| Dados incorretos | "Usuário ou senha inválidos." e permanece no Login |
-| Login correto | Navega para Home |
-| Limpar campos | Esvazia os campos e remove mensagens de erro |
-| Mostrar/Ocultar | Alterna a visibilidade da senha |
-| Home → Sobre / Contato | Abre a tela escolhida com Toolbar correspondente |
-| Home → Sobre → Contato → Voltar | Retorna a Sobre |
-| Home → Contato → Sobre → Voltar | Retorna a Contato |
-| Home → Sobre/Contato → Voltar | Retorna à Home |
-| Sair | Volta ao Login |
-| Encerrar e reabrir | Abre novamente no Login, sem sessão persistente |
-| Botão GitHub | Abre o repositório original no navegador |
+Execute os testes abaixo no aplicativo. O resultado esperado está indicado em cada item.
 
-Estes testes devem ser executados manualmente no Expo Go antes da entrega. A presença deste checklist não significa que os testes físicos já foram realizados.
+| Teste | Ação | Resultado esperado |
+| --- | --- | --- |
+| 1 | Informar apenas a senha | Mensagem "Informe o usuário." |
+| 2 | Informar apenas o usuário | Mensagem "Informe a senha." |
+| 3 | Informar credenciais incorretas | Mensagem de erro, sem sair do Login |
+| 4 | Informar as credenciais corretas | Abre a Home |
+| 5 | Home → Sobre | Abre Sobre com sua Toolbar |
+| 6 | Sobre → Home | Retorna para Home (Voltar ou Início) |
+| 7 | Home → Contato | Abre Contato com sua Toolbar |
+| 8 | Contato → Home | Retorna para Home (Voltar ou Início) |
+| 9 | Fechar completamente e reabrir o aplicativo | Começa novamente em Login |
 
-## Capturas para a atividade
+Teste também os botões **Limpar campos**, **Mostrar/Ocultar senha**, **Sair** e o link do GitHub. Confira a aparência em um celular real ou emulador.
 
-Após testar no iPhone, salve capturas **reais** das telas em `capturas/`:
+## Capturas para a entrega
 
-- `login.png`
-- `home.png`
-- `sobre.png`
-- `contato.png`
+Após testar a versão final, salve capturas reais das seguintes telas na pasta `prints/`:
 
-Nenhuma captura foi criada artificialmente. Consulte `capturas/INSTRUCOES.md`.
+- `login.jpg` (preferencialmente com os campos de teste preenchidos);
+- `home.jpg`;
+- `sobre.jpg`;
+- `contato.jpg`.
 
-## Projeto original
+**As capturas não acompanham este ZIP.** As imagens antigas foram retiradas porque mostram uma interface anterior. Adicione os quatro prints atualizados ao repositório antes de entregar o trabalho.
 
-Este aplicativo foi adaptado de dois projetos próprios: a estrutura React Native do Casa do Bairro e a identidade visual do site MovieArcade.
+## Observação acadêmica
 
-Repositório web original: <https://github.com/devkevinsramos/moviearcade>
-
-A atividade exige trabalho autoral e revisão do código. Antes de entregar, leia os arquivos, execute os testes reais, adicione as capturas e siga as orientações da disciplina sobre o uso de ferramentas de IA.
+Este aplicativo é uma adaptação mobile do meu projeto web MovieArcade para o exercício de navegação e Toolbar. Antes de entregar, revise o código, execute os testes e siga as orientações da instituição sobre autoria e uso de ferramentas de IA.

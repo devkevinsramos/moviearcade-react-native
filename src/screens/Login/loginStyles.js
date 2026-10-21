@@ -1,0 +1,43 @@
+import { StyleSheet } from 'react-native';
+import colors from '../../theme/colors';
+
+export default StyleSheet.create({
+  screen: { flex: 1, backgroundColor: colors.background },
+  keyboard: { flex: 1 },
+  scroll: { flexGrow: 1, justifyContent: 'center', paddingHorizontal: 24, paddingVertical: 28 },
+  wrapper: { width: '100%', maxWidth: 430, alignSelf: 'center' },
+  brandRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 48 },
+  logo: { width: 68, height: 68 },
+  brandText: { flex: 1, marginLeft: 15 },
+  brandName: { color: colors.accent, fontSize: 25, fontWeight: '700' },
+  brandDetail: { color: colors.muted, fontSize: 13, marginTop: 5 },
+  heading: { color: colors.heading, fontSize: 23, fontWeight: '600' },
+  description: { color: colors.muted, fontSize: 14, marginTop: 7, marginBottom: 28 },
+  label: { color: colors.body, fontSize: 14, marginBottom: 9 },
+  input: {
+    height: 48,
+    backgroundColor: colors.surface,
+    borderColor: colors.border,
+    borderWidth: 1,
+    borderRadius: 5,
+    color: colors.heading,
+    paddingHorizontal: 13,
+    fontSize: 16,
+    marginBottom: 20,
+  },
+  passwordBox: {
+    height: 48,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 5,
+  },
+  passwordInput: { flex: 1, height: 48, paddingHorizontal: 13, color: colors.heading, fontSize: 16 },
+  passwordToggle: { paddingVertical: 13, paddingHorizontal: 12 },
+  toggleText: { color: colors.heading, fontSize: 13 },
+  feedback: { color: colors.error, fontSize: 14, marginTop: 12, lineHeight: 20 },
+  actions: { gap: 12, marginTop: 25 },
+  note: { color: colors.muted, fontSize: 12, marginTop: 19, textAlign: 'center' },
+});
