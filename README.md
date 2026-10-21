@@ -77,22 +77,19 @@ MovieArcade_React_Native/
 
 ## Capturas de tela
 
-
-## Capturas de tela
-
 ### Login
-![Tela de Login do MovieArcade](prints/login.jpg)
+<img src="prints/login.jpg" width="250" alt="Tela de Login do MovieArcade">
 
 ### Home
-![Tela Home do MovieArcade](prints/home.jpg)
+<img src="prints/home.jpg" width="250" alt="Tela Home do MovieArcade">
 
 ### Sobre
-![Tela Sobre do MovieArcade](prints/sobre.jpg)
+<img src="prints/sobre.jpg" width="250" alt="Tela Sobre do MovieArcade">
 
-![Tela Sobre do MovieArcade](prints/sobre2.jpg)
+<img src="prints/sobre2.jpg" width="250" alt="Segunda captura da tela Sobre do MovieArcade">
 
 ### Contato
-![Tela Contato do MovieArcade](prints/contato.jpeg)
+<img src="prints/contato.jpeg" width="250" alt="Tela Contato do MovieArcade">
 
 
 ## Testes da atividade
