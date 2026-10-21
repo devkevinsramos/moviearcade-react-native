@@ -92,7 +92,7 @@ MovieArcade_React_Native/
 ![Tela Sobre do MovieArcade](prints/sobre2.jpg)
 
 ### Contato
-![Tela Contato do MovieArcade](prints/contato.jpg)
+![Tela Contato do MovieArcade](prints/contato.jpeg)
 
 
 ## Testes da atividade
